@@ -15,7 +15,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\VehicleAssignmentController;
 use App\Http\Controllers\ClientController;
-
+use App\Http\Controllers\Auth\TwoFactorController; // <--- ESTA ES LA LÍNEA QUE FALTA
 
 
 
@@ -37,6 +37,9 @@ Route::get('/home', function () {
     return redirect('/dashboard'); // Redirige a /dashboard
 })->name('home');
 
+
+Route::get('verify-2fa', [TwoFactorController::class, 'index'])->name('2fa.index');
+Route::post('verify-2fa', [TwoFactorController::class, 'store'])->name('2fa.store');
 
 
 //usuarios combinados

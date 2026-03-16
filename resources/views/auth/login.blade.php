@@ -30,20 +30,33 @@
             <span class="text-danger text-sm">{{ $message }}</span>
         @enderror
 
-        <div class="row">
-            <div class="col-8">
-                <div class="icheck-primary">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">
-                        Recordarme
-                    </label>
-                </div>
-            </div>
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-            </div>
+        {{-- resources/views/auth/login.blade.php --}}
+
+{{-- ... (campos de email y password) --}}
+
+<div class="row">
+    <div class="col-12 mb-3">
+        {{-- Opción de Laravel Breeze por defecto --}}
+        <div class="icheck-primary mb-2">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember" class="font-weight-normal text-sm">
+                Recordarme
+            </label>
         </div>
-    </form>
+
+        {{-- Nueva opción de Dispositivo Seguro --}}
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary btn-block">
+            Ingresar
+        </button>
+    </div>
+</div> 
+</form>
 @endsection
 
 @section('auth_footer')

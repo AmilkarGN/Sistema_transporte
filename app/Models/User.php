@@ -64,6 +64,8 @@ class User extends Authenticatable
     'phone',
     'address',
 	'password',
+	'two_factor_code',
+	'two_factor_expires_at' // <-- Agregar estos
 
 ];
 
@@ -95,6 +97,9 @@ class User extends Authenticatable
 	{
 		return $this->belongsTo(User::class, 'deleted_by');
 	}
-
+	public function safeDevices()
+{
+    return $this->hasMany(UserDevice::class);
+}
 }
 
